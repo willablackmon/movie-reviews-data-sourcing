@@ -1,32 +1,53 @@
-## Data Sourcing Challenge
+# Data Sourcing
 
-#### The application will import data via online APIs, and do the following:
+### Summary:
 
-* Will exercise understanding of accessing online APIs for data sourcing
-* Formatting data (json)
-* Converting data to Pandas DataFrames for analysis and calculations
-* Cleaning, merging, and final Export of data to .csv format.
+This application will import data via online APIs, convert to JSON format, convert to Pandas DataFrames for investigation, cleaning, merging, and export to CSV.
 
-Sample of a complex query from NYT
+---
 
-https://ashar180.medium.com/crawling-ny-times-api-for-relevant-articles-b6134b651054
+### APIs:
+
+* **The New York Times**
+  * https://developer.nytimes.com/docs/articlesearch-product/1/routes/articlesearch.json/get
+* **The Movie Database**
+  * https://developer.themoviedb.org/docs/search-and-query-for-details
+
+## Functions Performed:
+
+* Access online APIs and extract data
+* Investigate data and formatting
+* Execute multiple different queries
+* Format data into JSON
+* Convert data to Pandas DataFrames for analysis and calculations
+* Clean data
+* Merge DataFrames from two different sources of data
+* Export final merged, cleaned data to .csv format.
+
+---
+
+
+
+## Developer Notes
+
+### Sample querys from NYT
+
+https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=yourkey
+
+ref: https://ashar180.medium.com/crawling-ny-times-api-for-relevant-articles-b6134b651054
 
 ```
 section = "technology"
 query_url = f"https://api.nytimes.com/svc/topstories/v2/{section}.json?api-key={apikey}"
-
 query_url = f"https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key={apikey}"r = 
 
 requests.get(query_url)query = "AWS"
-
 begin_date = "20200701"  # YYYYMMDD
 
 filter_query = "\"body:(\"security\") AND body: (\"aws\") AND body:(\"breach\") AND news_desk:(\"Technology\") AND glocations:(\"USA\")\""  # http://www.lucenetutorial.com/lucene-query-syntax.html
 
 page = "1"  # <0-100>
-
 sort = "relevance"  # newest, oldest
-
 response_field = 'abstract,web_url,snippet,source,headline,keywords,pub_date,section_name'
 
 query_url = f"https://api.nytimes.com/svc/search/v2/articlesearch.json?" \
@@ -42,60 +63,18 @@ r = requests.get(query_url)
 pprint(r.json())
 ```
 
-Sample of complex query for movie details from The Movie Database
+### Sample queries for The Movie Database
 
-Found: Love & Taxes; id: 1248795
-{
-    "adult": false,
-    "backdrop_path": "/9JNsAIFMu4o37AgnU1JVtR6AWsK.jpg",
-    "belongs_to_collection": null,
-    "budget": 0,
-    "genres": [
-        {
-            "id": 10749,
-            "name": "Romance"
-        },
-        {
-            "id": 28,
-            "name": "Action"
-        },
-        {
-            "id": 18,
-            "name": "Drama"
-        }
-    ],
-    "homepage": "[https://www.netflix.com/title/81689799](https://www.netflix.com/title/81689799)",
-    "id": 1248795,
-    "imdb_id": "tt28355490",
-    "origin_country": [
-        "TR"
-    ],
-    "original_language": "tr",
-    "original_title": "Romantik H\u0131rs\u0131z",
-    "overview": "After learning that the art thief she has been chasing is her ex-lover, an officer working for Interpol concocts a plan to catch him red-handed.",
-    "popularity": 85.682,
-    "poster_path": "/niVtvS9Kf8G1VDPSqurqHkaSSwm.jpg",
-    "production_companies": [],
-    "production_countries": [
-        {
-            "iso_3166_1": "TR",
-            "name": "Turkey"
-        }
-    ],
-    "release_date": "2024-03-13",
-    "revenue": 0,
-    "runtime": 99,
-    "spoken_languages": [
-        {
-            "english_name": "Turkish",
-            "iso_639_1": "tr",
-            "name": "T\u00fcrk\u00e7e"
-        }
-    ],
-    "status": "Released",
-    "tagline": "",
-    "title": "Art of Love",
-    "video": false,
-    "vote_average": 6.495,
-    "vote_count": 111
-}
+**Search by movie, TV show or person:**
+
+* https://api.themoviedb.org/3/**search/movie?query=Jack+Reacher&**api_key=API_KEY
+
+**Query for a full movie details using movie id:**
+
+* https://api.themoviedb.org/3/**movie/343611?**api_key=API_KEY
+
+
+
+```
+
+```
