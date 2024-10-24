@@ -1,96 +1,59 @@
+# Movie Reviews Data Sourcing and Analysis
 
-# [Project Title]
+*This project utilizes data sourced from online APIs to gather movie-related data from The New York Times and The Movie Database. The project involves extracting, cleaning, and merging this data into a unified format for further analysis, with final outputs saved as CSV files.*
 
-*A brief one to two-sentence description of the project's main purpose and focus, including the type of data being analyzed or the problem being solved.*
-
-*Broad understanding of what the project is about, without going into too much detail about specific steps or features.*
-
-**[Abstract](#abstract)** | **[Data](#data)** | **[Data Processing (Basic)](#data-processing-basic)** | **[Data Processing (Complex)](#data-processing-complex)** | **[Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)** | **[Feature Transformation for Modeling](#feature-transformation-for-modeling)** | **[Modeling](#modeling)** | **[Model Evaluation and Scoring](#model-evaluation-and-scoring)** | **[Model Interpretation and Insights](#model-interpretation-and-insights)** | **[Deployment](#deployment)** | **[License](#license)**
+**[Data](#data)** | **[Data Processing](#data-processing)** | **[Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)** | **[Core Skills, Technologies, Tools](#core-skills-technologies-tools)** | **[Continued Exploration](#continued-exploration)**
 
 ---
 
 ## Abstract
 
-*Concise summary of the entire project or paper, including the purpose, methodology (key steps taken), and high-level results or findings.*
-
-*Should briefly outline problem being solved, key methodologies (steps like data cleaning, aggregation, analysis), and what the project ultimately achieves.*
+This project sources movie-related data from two APIs: The New York Times and The Movie Database (TMDb). After querying the respective APIs and extracting data, it performs data cleaning and transformation, merges data from the sources, and outputs the results to a CSV file for further analysis. Key steps include API integration, JSON data formatting, Pandas DataFrame manipulation and data merging.
 
 ## Data
 
-*Provide an overview of the data sources used in the project.*
+*The data in this project is sourced from two APIs:*
 
-* **[Data Source 1]** : Brief description of the data source.
-* **[Data Source 2]** : Brief description of the data source.
+* **The New York Times Article Search API** : Provides data on articles related to movie reviews. [NYT API documentation](https://developer.nytimes.com/docs/articlesearch-product/1/routes/articlesearch.json/get)
+* **The Movie Database (TMDb) API** : Provides detailed movie data including titles, release dates, and reviews. [TMDb API documentation](https://developer.themoviedb.org/docs/search-and-query-for-details)
 
-## Data Processing (Basic)
+### Data Processing
 
-*Cleaning, transforming, and preparing the raw data to ensure it is in a usable format.*
+*Cleaning, transforming, and preparing the raw data for analysis, focusing on merging data from multiple APIs and ensuring compatibility across datasets.*
 
-* **Data Import** : Load datasets (e.g., from CSV).
-* **Data Consistency** : Ensure column names, data types, etc., are aligned.
-* **Handling Missing or Inconsistent Data** : Impute missing values or remove inconsistencies.
-* **Combining Datasets** : Merge or concatenate data for analysis.
+* **API Access** : Query data from the NYT and TMDb APIs using Python requests.
+* **Data Extraction** : API responses converted to JSON format for easy handling.
+* **DataFrame Creation** : JSON data loaded into Pandas DataFrames.
+* **Data Cleaning** : Handle missing or irrelevant data, and standardize formats.
+* **Data Merging** : Combine movie-related data from two APIs into single DataFrame for analysis.
+* **Complex Merging** : Merge two DataFrames with differing structures to unify the data for analysis.
+* **Data Export** : Final cleaned, merged DataFrame exported to CSV format.
 
-## Data Processing (Complex)
+### Exploratory Data Analysis (EDA)
 
-*More advanced data processing steps required in complex projects.*
+* **Data Validation** : Basic data accuracy and completeness verification after merging.
 
-* **Missing Data Handling** : Impute or remove missing values.
-* **Feature Engineering** : Create new features based on domain knowledge or time-based data.
-* **Data Scaling** : Apply scaling methods like StandardScaler or MinMaxScaler for numerical features.
-* **Encoding** : Transform categorical data into numeric form (e.g., one-hot encoding, label encoding).
+---
 
-## Exploratory Data Analysis (EDA)
+## Core Skills, Technologies, Tools
 
-*Inspecting the data to understand patterns, trends, and relationships before modeling.*
+Python, Pandas, and the requests library to integrate data from two online APIs (NYT and TMDb). Performed data cleaning, formatting, and merging of JSON responses into Pandas DataFrames for analysis and export.
 
-* **Visualizations** : Create visualizations (heatmaps, histograms, scatter plots) to explore data.
-* **Correlation Analysis** : Use Pearson correlation or other techniques to discover relationships between variables.
-* **Descriptive Statistics** : Generate summary statistics (mean, median, standard deviation) to understand the data distribution.
+---
 
-## Feature Transformation for Modeling
+## Continued Exploration
 
-*Preparing features for machine learning models.*
+Next phase of the project could include utilizing **Large Language Models (LLMs)** and **Transformers** to preform sentiment
 
-* **Scaling** : Normalize or standardize features.
-* **Encoding** : Convert categorical variables into numerical representations.
-* **Feature Selection** : Reduce the number of features using statistical or algorithmic techniques.
+Next phase of the project could utilize **Large Language Models (LLMs)** and **Transformers** from Hugging Face for sentiment analysis of movie review text and correlation with movie scores. Suggested NLP pipeline:
 
-## Modeling
-
-*Training machine learning models to solve the problem.*
-
-* **Model Selection** : Choose appropriate models based on the problem type (e.g., regression, classification).
-* Example models: Linear Regression, Decision Trees, Random Forest, XGBoost.
-* **Model Training** : Train models on the prepared dataset.
-* **Hyperparameter Tuning** : Optimize model parameters using techniques like grid search or random search.
-
-## Model Evaluation and Scoring
-
-*Assessing the performance of the models.*
-
-* **Evaluation Metrics** : Use relevant metrics (e.g., RMSE, MAE, Accuracy, Precision, Recall) based on the type of problem (regression or classification).
-* **Cross-Validation** : Apply cross-validation (e.g., k-fold) to assess model generalization.
-* **Confusion Matrix/ROC Curve** : Visualize model performance using confusion matrices or ROC curves (for classification models).
-
-## Model Interpretation and Insights
-
-*Understanding the model's predictions and key drivers.*
-
-* **Feature Importance** : Highlight features with the most influence on predictions.
-* **Partial Dependence Plots** : Use PDPs or SHAP values to understand the relationship between features and outcomes.
-* **Model Explainability** : Discuss the model’s performance and its relevance to the problem context.
-
-## Deployment
-
-(Optional, if applicable)
-
-*Deploying the machine learning model to a production environment.*
-
-* **Model Deployment** : Describe the deployment strategy (e.g., using Flask, FastAPI, or Docker).
-* **API Creation** : Provide APIs for real-time predictions.
-* **Model Monitoring** : Implement techniques for tracking and maintaining model performance over time.
+* **Text Preprocessing** : Use Hugging Face's **`transformers`** library for tokenization and vectorization.
+* **Tokenization** : Break down text into tokens using pre-trained models like **BERTTokenizer** or  **RoBERTaTokenizer** .
+* **Vectorization** : Generate dense embeddings with models like **BERT** or **DistilBERT** to capture semantic meaning.
+* **Sentiment Analysis** : Apply pre-trained models via Hugging Face's **`sentiment-analysis`** pipeline, or fine-tune models like  **BERT** ,  **RoBERTa** , or **DistilBERT** for improved sentiment prediction.
+* **Model Fine-tuning** : Fine-tune Transformer model to enhance accuracy and relevance.
+* **Text Classification** : Classify reviews into sentiment categories (positive, neutral, negative) and analyze correlation with final movie scores.
 
 ## License
 
-*This project is licensed under the MIT License. See the `LICENSE` file for details.*
+This project is licensed under the MIT License. See the `LICENSE` file for details.
