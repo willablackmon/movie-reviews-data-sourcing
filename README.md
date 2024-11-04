@@ -1,14 +1,18 @@
 # Movie Reviews Data Sourcing and Analysis
 
-*This project utilizes data sourced from online APIs to gather movie-related data from The New York Times and The Movie Database. The project involves extracting, cleaning, and merging this data into a unified format for further analysis, with final outputs saved as CSV files.*
+Source data from online APIs to gather movie-related data from The New York Times and The Movie Database. Extract, clean, and merge this data into a unified format for further analysis.  Final outputs saved as CSV files.
 
-**[Data](#data)** | **[Data Processing](#data-processing)** | **[Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)** | **[Core Skills, Technologies, Tools](#core-skills-technologies-tools)** | **[Continued Exploration](#continued-exploration)**
+**[Data](#data)** | **[Data Processing](#data-processing)** | **[Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)** | **[Continued Exploration](#continued-exploration)**
 
 ---
 
 ## Abstract
 
 This project sources movie-related data from two APIs: The New York Times and The Movie Database (TMDb). After querying the respective APIs and extracting data, it performs data cleaning and transformation, merges data from the sources, and outputs the results to a CSV file for further analysis. Key steps include API integration, JSON data formatting, Pandas DataFrame manipulation and data merging.
+
+## Core Skills, Technologies, Tools
+
+Python, Pandas, and the requests library to integrate data from two online APIs (NYT and TMDb). Performed data cleaning, formatting, and merging of JSON responses into Pandas DataFrames for analysis and export.
 
 ## Data
 
@@ -32,14 +36,6 @@ This project sources movie-related data from two APIs: The New York Times and Th
 ### Exploratory Data Analysis (EDA)
 
 * **Data Validation** : Basic data accuracy and completeness verification after merging.
-
----
-
-## Core Skills, Technologies, Tools
-
-Python, Pandas, and the requests library to integrate data from two online APIs (NYT and TMDb). Performed data cleaning, formatting, and merging of JSON responses into Pandas DataFrames for analysis and export.
-
----
 
 ## Continued Exploration
 
